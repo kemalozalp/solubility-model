@@ -1,0 +1,5 @@
+SMILES WS
+[O-][N+](=O)C(C=O)(C(O)=O)C1C=CC=CC=1 -1.843351149
+[O-][N+](=O)C1(Br)COCOC1 -1.647815433
+[O-][N+](=O)C1=C(Cl)C(=C(O)C(=C1Cl)[N+]([O-])=O)[N+]([O-])=O -0.60496997
+[O-][N+](=O)C1=CC(=C(C=C1)N=NC1=C(O)C=CC2=CC=CC=C21)[N+]([O-])=O -7.729934489
