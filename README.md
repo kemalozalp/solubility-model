@@ -1,4 +1,4 @@
-# solubility-model
+# A Solubility Model Web Application
 Welcome! In this project, I train a solubility model and deploy it as a web app. 
 I use data provided by Lowe _et. al._ (2023).
 
