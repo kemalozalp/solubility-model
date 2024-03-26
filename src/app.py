@@ -78,9 +78,9 @@ This means that compounds with solubility <0.001 M or <0.001 mol/L are insoluble
 You can download the predictions as a CSV file.
 
 **Credits**
-- App built in `Python` + `Streamlit` by [Kemal Ozalp, Ph.D.](https://kemalozalp.github.io).
-- Solubility dataset taken from [Lowe et. al. (2023)](https://pubmed.ncbi.nlm.nih.gov/36877669/).
-- Streamlit app inspired tutorial and code by [Data Professor](https://www.youtube.com/watch?v=m0sePkuyTKs&list=PLtqF5YXg7GLlQJUv9XJ3RWdd5VYGwBHrP&index=9).
+- App built in `Python` + `Streamlit` by [Kemal Ozalp, Ph.D.](https://kemalozalp.github.io)
+- Solubility dataset taken from [Lowe et. al. (2023)](https://pubmed.ncbi.nlm.nih.gov/36877669/)
+- Streamlit app inspired tutorial and code by [Data Professor](https://www.youtube.com/watch?v=m0sePkuyTKs&list=PLtqF5YXg7GLlQJUv9XJ3RWdd5VYGwBHrP&index=9)
 ---
 """
 )
