@@ -1,6 +1,7 @@
 # A Solubility Model Web Application
 Welcome! In this project, I train a solubility model and deploy it as a web app. 
 I use data provided by [Lowe _et. al._ (2023)](https://pubmed.ncbi.nlm.nih.gov/36877669/).
+I was inspired by the tutorial and code from [Data Professor](https://www.youtube.com/watch?v=m0sePkuyTKs&list=PLtqF5YXg7GLlQJUv9XJ3RWdd5VYGwBHrP&index=9).
 
 So far, I have trained a very simple and crude classification model around 0.001 M (or mol/L) cutoff value, meaning that compounds with solubility < 0.001 are insoluble.
 Model returns '0' for insoluble and '1' for soluble compounds. I used Python for training the model and Streamlit for building the web app.
