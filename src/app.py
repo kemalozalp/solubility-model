@@ -92,7 +92,7 @@ with st.sidebar.header("1. Upload your CSV data"):
     )
     st.sidebar.markdown(
         """
-[Example input file](https://raw.githubusercontent.com/dataprofessor/bioactivity-prediction-app/main/example_acetylcholinesterase.txt)
+[Example input file](https://github.com/kemalozalp/solubility-model/blob/main/test.csv)
 """
     )
 
