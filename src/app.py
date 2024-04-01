@@ -62,7 +62,7 @@ def filedownload(df):
 
 
 # Logo image
-image = Image.open("./logo.png")
+image = Image.open("./docs/logo.png")
 
 st.image(image, use_column_width=True)
 
