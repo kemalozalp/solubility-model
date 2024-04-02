@@ -3,9 +3,9 @@ jobs:
   run:
     runs-on: ubuntu-latest
     # optionally use a convenient Ubuntu LTS + DVC + CML image
-    defaults:
-      run:
-        shell: bash -l {0}
+    # defaults:
+    #   run:
+    #     shell: bash -l {0}
     container: continuumio/anaconda3
     steps:
       - uses: actions/checkout@v3
