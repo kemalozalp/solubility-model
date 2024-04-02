@@ -33,7 +33,11 @@ jobs:
       - name: Initialize Conda
         run: |
           conda init bash
-          /bin/bash -c "source ~/.bashrc"  # Use Bash explicitly to source the bashrc file
+          /bin/bash -c "source ~/.bashrc" || echo "Error sourcing bashrc"
+      - name: Debug Environment
+        run: |
+          echo "Current Shell: $SHELL"
+          echo "Conda Location: $(which conda)"
       - name: create_conda_env
         run: |
           conda --version
