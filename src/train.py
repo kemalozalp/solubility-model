@@ -41,7 +41,7 @@ X_train = [create_ecfp(mol) for mol in tqdm(ROMols)]
 y_train = [int(1) if val >= cutoff else int(0) for val in train_df["median_WS"].values]
 
 # Train
-clf = RandomForestClassifier(n_estimators=100, max_depth=40, random_state=7)
+clf = RandomForestClassifier(n_estimators=100, max_depth=60, random_state=7)
 clf.fit(X_train, y_train)
 
 # Save model
