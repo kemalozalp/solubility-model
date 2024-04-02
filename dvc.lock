@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/01_raw/tx2c00379_si_002.xlsx
+      hash: md5
+      md5: 78fb958a66fb1ddd1f9dc2cf8210171d
+      size: 8798975
+    - path: src/train.py
+      hash: md5
+      md5: 66cee9924b4b9bc9bc79bf1977eaf162
+      size: 1368
+    outs:
+    - path: models/solubility_model.joblib
+      hash: md5
+      md5: 7439d77879983034847923fa56958758
+      size: 21012729
+  test:
+    cmd: python src/test.py
+    deps:
+    - path: data/01_raw/tx2c00379_si_002.xlsx
+      hash: md5
+      md5: 78fb958a66fb1ddd1f9dc2cf8210171d
+      size: 8798975
+    - path: models/solubility_model.joblib
+      hash: md5
+      md5: 7439d77879983034847923fa56958758
+      size: 21012729
+    - path: src/test.py
+      hash: md5
+      md5: 66b6fe15f141be874ffa245398a5aca0
+      size: 2094
+    outs:
+    - path: results/metrics.json
+      hash: md5
+      md5: 2d9d534ddc3a840a4e0b9b866f0e6d75
+      size: 177
