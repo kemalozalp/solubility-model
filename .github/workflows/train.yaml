@@ -42,7 +42,7 @@ jobs:
         run: |
           conda --version
           conda env create -f env.yaml
-          conda activate solubility-model
+          /opt/conda/bin/activate solubility-model
       - name: cml_run
         # env:
         #   REPO_TOKEN: ${{ secrets.GITHUB.TOKEN }}
