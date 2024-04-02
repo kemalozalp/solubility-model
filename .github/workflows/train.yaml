@@ -33,7 +33,7 @@ jobs:
       - name: Initialize Conda
         run: |
           conda init bash
-          source ~/.bashrc  # Source the bashrc file to ensure Conda initialization takes effect
+          /bin/bash -c "source ~/.bashrc"  # Use Bash explicitly to source the bashrc file
       - name: create_conda_env
         run: |
           conda --version
