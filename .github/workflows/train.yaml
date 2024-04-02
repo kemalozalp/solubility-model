@@ -19,6 +19,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB.TOKEN }}
         run: |
           conda env create -f env.yaml
+          conda init
           conda activate solubility-model
           dvc repro
 
