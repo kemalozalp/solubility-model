@@ -17,22 +17,17 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v2
-      - name: configure_aws_credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
-      - name: Debug Environment
-        run: |
-          echo $0
-          # source /opt/conda/etc/profile.d/conda.sh
-          # echo "Current Shell: $SHELL"
-          # echo "Conda Location: $(which conda)"
-      - name: create_conda_env
+      - name: Create Conda Env
         run: |
           conda env create -f env.yaml
           conda activate solubility-model
+        shell: bash
       - name: cml_run
         # env:
         #   REPO_TOKEN: ${{ secrets.GITHUB.TOKEN }}
@@ -43,6 +38,7 @@ jobs:
           git fetch --prune
           dvc metrics diff --show-md master >> report.md
           cml-send-comment report.md
+        shell: bash
       # - name: Write CML report
       #   env:
       #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
