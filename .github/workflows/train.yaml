@@ -26,6 +26,7 @@ jobs:
       - name: Create Conda Env
         run: |
           conda env create -f env.yaml
+          conda init
           conda activate solubility-model
         shell: bash
       - name: cml_run
