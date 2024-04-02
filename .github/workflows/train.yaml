@@ -17,23 +17,23 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v2
-      - name: install_aws_cli
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          apt-get install zip unzip
-          unzip awscliv2.zip
-          apt-get install sudo
-          sudo ./aws/install
-      - name: create_conda_env
-        run: |
-          conda env create -f env.yaml
-          conda activate solubility-model
+      # - name: install_aws_cli
+      #   run: |
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     apt-get install zip unzip
+      #     unzip awscliv2.zip
+      #     apt-get install sudo
+      #     sudo ./aws/install
       - name: configure_aws_credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
+      - name: create_conda_env
+        run: |
+          conda env create -f env.yaml
+          conda activate solubility-model
       - name: cml_run
         # env:
         #   REPO_TOKEN: ${{ secrets.GITHUB.TOKEN }}
