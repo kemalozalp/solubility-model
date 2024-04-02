@@ -23,6 +23,7 @@ jobs:
         run: |
           conda env create -f env.yaml
           conda activate solubility-model
+          aws iam list-users
           dvc pull
           dvc repro
 
