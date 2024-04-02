@@ -17,15 +17,15 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v2
-      - name: create_conda_env
-        run: |
-          conda env create -f env.yaml
-          conda activate solubility-model
       - name: install_aws_cli
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
+      - name: create_conda_env
+        run: |
+          conda env create -f env.yaml
+          conda activate solubility-model
       - name: configure_aws_credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
