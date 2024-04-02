@@ -27,7 +27,9 @@ jobs:
         run: |
           conda env create -f env.yaml
           conda init
-          conda info
+          # conda info
+          echo $SHELL
+          source /opt/conda/etc/profile.d/conda.sh
           echo $SHELL
           conda activate solubility-model
         shell: bash
