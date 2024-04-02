@@ -164,5 +164,4 @@ cython_debug/
 
 # Others
 *.pptx
-/models
 /data

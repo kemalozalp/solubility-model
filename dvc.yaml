@@ -1,0 +1,17 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/01_raw/tx2c00379_si_002.xlsx
+    - src/train.py
+    outs:
+    - models/solubility_model.joblib
+  test:
+    cmd: python src/test.py
+    deps:
+    - data/01_raw/tx2c00379_si_002.xlsx
+    - models/solubility_model.joblib
+    - src/test.py
+    metrics:
+    - results/metrics.json:
+        cache: false
