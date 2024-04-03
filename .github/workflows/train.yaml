@@ -35,6 +35,7 @@ jobs:
 
           dvc pull
           dvc repro
+          echo "dvc repro ran successfully."
 
           git fetch --prune
           dvc metrics diff --show-md master >> report.md
