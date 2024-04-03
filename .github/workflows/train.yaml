@@ -37,9 +37,9 @@ jobs:
           dvc repro
           echo "dvc repro ran successfully."
 
-          git fetch --prune
-          dvc metrics diff --show-md master >> report.md
-          cml-send-comment report.md
+          # git fetch --prune
+          # dvc metrics diff --show-md master >> report.md
+          # cml-send-comment report.md
         shell: bash
       # - name: cml_run
       #   shell: bash
