@@ -1,5 +1,6 @@
 import rdkit
 import joblib
+import boto3
 from rdkit.Chem import MolFromSmiles
 from tqdm import tqdm
 from rdkit.Chem.AllChem import GetMorganFingerprintAsBitVect
@@ -48,3 +49,10 @@ clf.fit(X_train, y_train)
 model_path = "./models/solubility_model.joblib"
 joblib.dump(clf, model_path)
 print(f"Saved model to {model_path}")
+
+# Upload model to AWS S3 Bucket
+s3_client = boto3.client("s3")
+object_name = "solubility_model.joblib"
+bucket_name = "solubilityapp"
+s3_client.upload_file(model_path, bucket_name, object_name)
+print("Uploaded model to the S3 bucket.")
