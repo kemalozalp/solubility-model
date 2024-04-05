@@ -4,3 +4,4 @@ pandas
 rdkit
 joblib
 boto3
+scikit-learn
