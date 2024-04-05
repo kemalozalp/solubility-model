@@ -2,3 +2,5 @@ numpy
 streamlit
 pandas
 rdkit
+s3fs
+st-files-connection
