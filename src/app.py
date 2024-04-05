@@ -2,9 +2,11 @@ import joblib
 import os
 import rdkit
 import base64
+import boto3
 import numpy as np
 import streamlit as st
 import pandas as pd
+from io import BytesIO
 from PIL import Image
 from rdkit.Chem import MolFromSmiles, DataStructs
 from rdkit.Chem.AllChem import GetMorganFingerprintAsBitVect
@@ -48,7 +50,7 @@ def calc_desc(data):
 
 # Predictor
 def predict(ecfps):
-    model = joblib.load("./models/solubility_model.joblib")
+    model = read_joblib("s3://solubilityapp/solubility_model.joblib")
     prediction = model.predict(ecfps)
     return prediction
 
@@ -59,6 +61,33 @@ def filedownload(df):
     b64 = base64.b64encode(csv.encode()).decode()  # strings <-> bytes conversions
     href = f'<a href="data:file/csv;base64,{b64}" download="prediction.csv">Download Predictions</a>'
     return href
+
+
+def read_joblib(path):
+    """
+    Function to load a joblib file from an s3 bucket or local directory.
+    Arguments:
+    * path: an s3 bucket or local directory path where the file is stored
+    Outputs:
+    * file: Joblib file loaded
+    source: https://stackoverflow.com/questions/62941174/how-to-write-load-machine-learning-model-to-from-s3-bucket-through-joblib
+    """
+
+    # Path is an s3 bucket
+    if path[:5] == "s3://":
+        s3_bucket, s3_key = path.split("/")[2], path.split("/")[3:]
+        s3_key = "/".join(s3_key)
+        with BytesIO() as f:
+            boto3.client("s3").download_fileobj(Bucket=s3_bucket, Key=s3_key, Fileobj=f)
+            f.seek(0)
+            file = joblib.load(f)
+
+    # Path is a local directory
+    else:
+        with open(path, "rb") as f:
+            file = joblib.load(f)
+
+    return file
 
 
 # Logo image
