@@ -3,3 +3,4 @@ streamlit
 pandas
 rdkit
 joblib
+boto3
