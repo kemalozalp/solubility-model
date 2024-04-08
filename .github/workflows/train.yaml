@@ -41,7 +41,7 @@ jobs:
           echo "add all to safe.directory."
           git fetch --prune
           echo "fetch git history"
-          dvc metrics diff --show-md master >> report.md
+          dvc metrics diff --md master >> report.md
           echo "compare metrics of the new model with the current one"
           cml-send-comment report.md
         shell: bash
