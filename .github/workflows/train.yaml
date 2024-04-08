@@ -17,8 +17,6 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v2
-        env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -26,6 +24,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Create Conda Env
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           conda env create -f env.yaml
           conda init
