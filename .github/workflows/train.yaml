@@ -1,6 +1,7 @@
 on: [push]
 jobs:
   run:
+    permissions: write-all
     runs-on: ubuntu-latest
     # optionally use a convenient Ubuntu LTS + DVC + CML image
     # defaults:
