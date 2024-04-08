@@ -17,6 +17,8 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v2
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
