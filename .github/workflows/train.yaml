@@ -43,7 +43,7 @@ jobs:
           echo "fetch git history"
           dvc metrics diff --md main >> report.md
           echo "compare metrics of the new model with the current one"
-          cml-send-comment report.md
+          cml comment create report.md
         shell: bash
       # - name: cml_run
       #   shell: bash
