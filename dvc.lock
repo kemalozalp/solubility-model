@@ -9,7 +9,7 @@ stages:
       size: 8798975
     - path: src/train.py
       hash: md5
-      md5: 9ae3f0d052765021150371f78ab0021d
+      md5: 4fe10ade771c2b1d67ba622cb1c6e49e
       size: 1617
     outs:
     - path: models/solubility_model.joblib
