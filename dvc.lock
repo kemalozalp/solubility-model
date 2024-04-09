@@ -14,8 +14,8 @@ stages:
     outs:
     - path: models/solubility_model.joblib
       hash: md5
-      md5: 7439d77879983034847923fa56958758
-      size: 21012729
+      md5: a7cc2172664ec001114643057bcb55e9
+      size: 24021609
   test:
     cmd: python src/test.py
     deps:
@@ -25,8 +25,8 @@ stages:
       size: 8798975
     - path: models/solubility_model.joblib
       hash: md5
-      md5: 7439d77879983034847923fa56958758
-      size: 21012729
+      md5: a7cc2172664ec001114643057bcb55e9
+      size: 24021609
     - path: src/test.py
       hash: md5
       md5: 66b6fe15f141be874ffa245398a5aca0
@@ -34,5 +34,5 @@ stages:
     outs:
     - path: results/metrics.json
       hash: md5
-      md5: 2d9d534ddc3a840a4e0b9b866f0e6d75
-      size: 177
+      md5: 4948064bd8229f15cd34f35d98ab8866
+      size: 178
