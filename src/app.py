@@ -115,7 +115,7 @@ You can download the predictions as a CSV file.
 )
 
 # Sidebar
-with st.sidebar.header("1. Upload your CSV data"):
+with st.sidebar.header("1. Upload your data"):
     uploaded_file = st.sidebar.file_uploader(
         "Upload your input file", type=["csv", "txt", "xlsx"]
     )
